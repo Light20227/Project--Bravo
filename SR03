@@ -29,11 +29,13 @@ namespace Bravo_SR03
                     //option function
                     switch (Convert.ToInt32(Console.ReadLine()))
                     {
+                        //Add record funstion
                         case 1:
                             Console.WriteLine("you have selected option to add information");
                             Console.WriteLine("");
                             AddRecord();
                             break;
+                        //Display record List of employees
                         case 6:
                             DisplayRecord();
                             break;
@@ -56,8 +58,11 @@ namespace Bravo_SR03
         }
         static void AddRecord()
         {
+            //Add a specific number of employees
             Console.WriteLine("How many will be added?");
             int emps = Convert.ToInt32(Console.ReadLine());
+            //Reapeat Add function according to the number input
+            //Add first and last name to record list
             for (int i = 0; i < emps; i++)
             {
                 Console.WriteLine("Please enetr First name:");
@@ -71,6 +76,7 @@ namespace Bravo_SR03
         }
         static void DisplayRecord()
         {
+            //Displays all record added in list
             Console.WriteLine("Record List:");
             foreach(var List in employee)
             {
