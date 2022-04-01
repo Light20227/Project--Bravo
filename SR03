@@ -1,1 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace SR03
+{
+    internal class Program
+    {
+        public static List<string> employee = new List<string>();
+        static void Main(string[] args)
+        {
+            {
+                // loop option
+                bool enterAgain = true;
+                // Design landing page Title
+                Console.WriteLine($"----------------------------------------------" +
+                                  $"\n------------ employee information ------------" +
+                                  $"\n----------------------------------------------");
+                //loop option
+                while (enterAgain)
+                {
+                    //Display option
+                    Console.WriteLine("");
+                    Console.WriteLine($"Select an option:\n\t1 - Add Information\n\t2 - Insert Information" +
+                    $"\n\t3 - Update Record\n\t4 - Delete Information\n\t5 - Search Information\n\t6- Display Information");
+
+                    //option function
+                    switch (Convert.ToInt32(Console.ReadLine()))
+                    {
+                        case 1:
+                            Console.WriteLine("you have selected option to add information");
+                            Console.WriteLine("");
+                            AddRecord();
+                            break;
+                        case 6:
+                            DisplayRecord();
+                            break;
+                    }
+                    //option to enter continue or not
+                    Console.WriteLine("want to continue? (Y/N)");
+                    string answer = Console.ReadLine();
+                    answer = answer.ToUpper();
+                    //continue if Y (yes) else exit
+                    if (answer == "Y")
+                    {
+                        enterAgain = true;
+                    }
+                    else
+                    {
+                        enterAgain = false;
+                    }
+                }
+            }
+        }
+        static void AddRecord()
+        {
+            Console.WriteLine("How many will be added?");
+            int emps = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < emps; i++)
+            {
+                Console.WriteLine("Please enetr First name:");
+                string Fname = Console.ReadLine();
+                Console.WriteLine("Please enetr Last name:");
+                string Lname = Console.ReadLine();
+                Console.WriteLine($"{Fname}, {Lname} has been added to record list");
+                employee.Add($"{Fname}, {Lname}");
+            }
+                
+        }
+        static void DisplayRecord()
+        {
+            Console.WriteLine("Record List:");
+            foreach(var List in employee)
+            {
+                Console.WriteLine(List.ToString()); 
+            }
+            
+        }
+    }
+}
