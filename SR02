@@ -1,1 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace prac
+{
+    internal class Program
+    {
+        static List<String> List = new List<string>();
+        static void Main(string[] args)
+        {
+            {
+                // loop option
+                bool enterAgain = true;
+                // Design landing page Title
+                Console.WriteLine($"----------------------------------------------" +
+                                  $"\n------------ employee information ------------" +
+                                  $"\n----------------------------------------------");
+                //loop option
+                while (enterAgain)
+                {
+                    //Display option
+                    Console.WriteLine($"Select one option:\n\t1 - Add Information\n\t2 - Insert Information" +
+                    $"\n\t3 - Update Record\n\t4 - Delete Information\n\t5 - Search Information\n\t6- Display Information");
+
+                    //option to enter continue or not
+                    Console.WriteLine("want to continue? (Y/N)");
+                    string answer = Console.ReadLine();
+                    answer = answer.ToUpper();
+                    //continue if Y (yes) else exit
+                    if (answer == "Y")
+                    {
+                        enterAgain = true;
+                    }
+                    else
+                    {
+                        enterAgain = false;
+                    }
+                }
+            }
+        }
+    }
+}
