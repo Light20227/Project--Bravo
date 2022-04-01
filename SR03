@@ -70,19 +70,20 @@ namespace Bravo_SR03
                 Console.WriteLine("Please enetr Last name:");
                 string Lname = Console.ReadLine();
                 Console.WriteLine($"{Fname}, {Lname} has been added to record list");
-                employee.Add($"{Fname}, {Lname}");
+                employee.Add($" {Fname}, {Lname}");
             }
-                
+
         }
         static void DisplayRecord()
         {
             //Displays all record added in list
             Console.WriteLine("Record List:");
-            foreach(var List in employee)
+            foreach (var List in employee)
             {
-                Console.WriteLine(List.ToString()); 
+                Console.WriteLine("------------------");
+                Console.WriteLine(List.ToString());
             }
-            
+
         }
     }
 }
