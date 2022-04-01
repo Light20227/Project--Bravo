@@ -11,7 +11,9 @@ namespace Bravo__SR01
         static void Main(string[] args)
         {
         //Design landing page Title
-            Console.WriteLine("==========Employee Information==========");
+            Console.WriteLine($"----------------------------------------------" +
+                              $"\n------------ employee information ------------" +
+                              $"\n----------------------------------------------");
             Console.ReadKey();
         }
     }
