@@ -22,11 +22,11 @@ namespace Bravo_SR02
                 while (enterAgain)
                 {
                     //Display option
-                    Console.WriteLine($"Select one option:\n\t1 - Add Information\n\t2 - Insert Information" +
+                    Console.WriteLine($"[Select one option]:\n\t1 - Add Information\n\t2 - Insert Information" +
                     $"\n\t3 - Update Record\n\t4 - Delete Information\n\t5 - Search Information\n\t6- Display Information");
 
                     //option to enter continue or not
-                    Console.WriteLine("want to continue? (Y/N)");
+                    Console.WriteLine("[want to continue? (Y/N)]");
                     string answer = Console.ReadLine();
                     answer = answer.ToUpper();
                     //continue if Y (yes) else exit
