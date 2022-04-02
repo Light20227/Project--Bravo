@@ -101,13 +101,9 @@ namespace Bravo_SR03
             Fname = Console.ReadLine();
             Console.WriteLine("Please enter Last name:");
             Lname = Console.ReadLine();
-            Console.WriteLine($"{employee[ind].ToString()} is updated to {Fname}, {Lname}");
+            Console.WriteLine($"{employee[ind]} is updated to {Fname}, {Lname}");
             employee.RemoveAt(ind);
             employee.Insert(ind, Fname + ", " + Lname);
-            foreach(var List in employee)
-            {
-                Console.WriteLine(List.ToString());
-            }
         }
     }
 }
