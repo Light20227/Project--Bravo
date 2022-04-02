@@ -1,0 +1,173 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bravo_SR09
+{
+    internal class Program
+    {
+        public static List<string> employee = new List<string>();
+        public static String Fname, Lname,  Email, Id, Phone, Address;
+        public static int ind;
+        static void Main(string[] args)
+        {
+            {
+                // loop option
+                bool enterAgain = true;
+                // Design landing page Title
+                Console.WriteLine($"----------------------------------------------" +
+                                  $"\n------------ employee information ------------" +
+                                  $"\n----------------------------------------------");
+                //loop option
+                while (enterAgain)
+                {
+                    //Display option
+                    Console.WriteLine("");
+                    Console.WriteLine($"Select an option:\n\t1 - Add Information\n\t2 - Insert Information" +
+                    $"\n\t3 - Update Record\n\t4 - Delete Information\n\t5 - Search Information" +
+                    $"\n\t6- Display Information\n\t7- Additional Information");
+
+                    //option function
+                    switch (Convert.ToInt32(Console.ReadLine()))
+                    {
+                        //Add record funstion
+                        case 1:
+                            Console.WriteLine("+you have selected option to add information+");
+                            Console.WriteLine("");
+                            AddRecord();
+                            break;
+                        //Display record List of employees
+                        case 2:
+                            Console.WriteLine("+you have selecetd option to Insert Information+");
+                            InsertRecord();
+                            break;
+                        case 3:
+                            Console.WriteLine("+you have selected option to Update Information");
+                            UpdateRecord();
+                            break;
+                        //Delete record function
+                        case 4:
+                            Console.WriteLine("+you have selected option to Delete Information");
+                            DeleteRecord();
+                            break;
+                        //Search record function
+                        case 5:
+                            Console.WriteLine("+you have selected option to Search Information");
+                            SearchRecord();
+                            break;
+                        //Display record function
+                        case 6:
+                            Console.WriteLine("+you have selected option to Display Information");
+                            DisplayRecord();
+                            break;
+                        case 7:
+                            Console.WriteLine("+you have selected option to Add contact Information");
+                            ContactRecord();
+                            break;
+                    }
+                    //option to enter continue or not
+                    Console.WriteLine("want to continue? (Y/N)");
+                    string answer = Console.ReadLine();
+                    answer = answer.ToUpper();
+                    //continue if Y (yes) else exit
+                    if (answer == "Y")
+                    {
+                        enterAgain = true;
+                    }
+                    else
+                    {
+                        enterAgain = false;
+                    }
+                }
+            }
+        }
+        static void AddRecord()
+        {
+            //Add a specific number of employees
+            Console.WriteLine("How many will be added?");
+            int emps = Convert.ToInt32(Console.ReadLine());
+            //Reapeat Add function according to the number input
+            //Add employee first and last name to record list
+            for (int i = 0; i < emps; i++)
+            {
+                Console.WriteLine("Please enter First name:");
+                Fname = Console.ReadLine();
+                Console.WriteLine("Please enter Last name:");
+                Lname = Console.ReadLine();
+                Console.WriteLine($"{Fname}, {Lname} has been added to record list");
+                employee.Add($"{Fname}, {Lname}");
+            }
+        }
+        static void InsertRecord()
+        {
+            //Insert employee first and last name to record list
+            Console.WriteLine("Please enter Last name:");
+            Fname = Console.ReadLine();
+            Console.WriteLine("Please enter Last name:");
+            Lname = Console.ReadLine();
+            Console.WriteLine("Enter index number");
+            int ind = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"\t{Fname}, {Lname} is inserted at [{ind}] of List ");
+            employee.Insert(ind, Fname + ", " + Lname);
+        }
+        static void UpdateRecord()
+        {
+            Console.WriteLine("Enter employee index number");
+            ind = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter First name:");
+            Fname = Console.ReadLine();
+            Console.WriteLine("Please enter Last name:");
+            Lname = Console.ReadLine();
+            Console.WriteLine($"\t{employee[ind]} is updated to {Fname}, {Lname}");
+            employee.RemoveAt(ind);
+            employee.Insert(ind, Fname + ", " + Lname);
+        }
+        static void DeleteRecord()
+        {
+            Console.WriteLine("Enter employee index number");
+            ind = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"\t{employee[ind]} has been deleted in List");
+            employee.RemoveAt(ind);
+        }
+        static void SearchRecord()
+        {
+            Console.WriteLine("Please enter First name");
+            Fname = Console.ReadLine();
+            foreach(var List in employee)
+            {
+                var firstname = List.Contains(Fname);
+                if (firstname == true)
+                {
+                    Console.WriteLine($"\t{List} is in List");
+                }
+            }
+        }
+        static void DisplayRecord()
+        {
+            Console.WriteLine("\t[List Record Information]");
+            foreach(var String in employee)
+            {
+                Console.WriteLine($"\t-----------------------------------");
+                Console.WriteLine($"\t\t{String}");
+            }
+        }
+        static void ContactRecord()
+        {
+            Console.WriteLine("Enter employee index number");
+            ind = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please enter Email: ");
+            Email = Console.ReadLine();
+            Console.WriteLine("Please enter Id: ");
+            Id = Console.ReadLine();
+            Console.WriteLine("Please enter Mobile number: ");
+            Phone = Console.ReadLine(); 
+            Console.WriteLine("Please enter Addresss: ");
+            Address = Console.ReadLine();
+            var details = ($"{Fname}, {Lname} - | {Email} | {Id} | {Phone} | {Address}");
+            employee.RemoveAt(ind);
+            employee.Insert(ind, details);
+        }
+    }
+}
