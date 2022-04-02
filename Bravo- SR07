@@ -104,6 +104,8 @@ namespace Bravo_SR07
         }
         static void UpdateRecord()
         {
+            //Find index in list to update
+            //replace index with user input name
             Console.WriteLine("Enter employee index number");
             ind = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Please enter First name:");
@@ -116,6 +118,7 @@ namespace Bravo_SR07
         }
         static void DeleteRecord()
         {
+            //Delete name index location in list
             Console.WriteLine("Enter employee index number");
             ind = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine($"\t{employee[ind]} has been deleted in List");
@@ -123,8 +126,10 @@ namespace Bravo_SR07
         }
         static void SearchRecord()
         {
+            //Find if List first name input is present in list
             Console.WriteLine("Please enter First name");
             Fname = Console.ReadLine();
+            //find all list containing fistname input
             foreach(var List in employee)
             {
                 var firstname = List.Contains(Fname);
