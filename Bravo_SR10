@@ -71,10 +71,6 @@ namespace Bravo_SR10
                             InfoRecord();
                             break;
                     }
-                    if (employee.Count > 0)
-                    {
-                        Console.WriteLine();
-                    }
                     //option to enter continue or not
                     Console.WriteLine("want to continue? (Y/N)");
                     string answer = Console.ReadLine();
