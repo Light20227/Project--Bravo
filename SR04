@@ -36,13 +36,10 @@ namespace Bravo_SR03
                             Console.WriteLine("");
                             AddRecord();
                             break;
-                        //insert Record function
+                        //Insert Record function
                         case 2:
                             Console.WriteLine("+you have selecetd option to Insert Information");
                             InsertRecord();
-                            break;
-                        case 6:
-                            DisplayRecord();
                             break;
                     }
                     //option to enter continue or not
