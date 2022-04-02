@@ -78,7 +78,7 @@ namespace Bravo_SR03
         }
         static void InsertRecord()
         {
-            Console.WriteLine("Please enter Last name:");
+            Console.WriteLine("Please enter First name:");
             Fname = Console.ReadLine();
             Console.WriteLine("Please enter Last name:");
             Lname = Console.ReadLine();
