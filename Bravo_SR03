@@ -59,16 +59,18 @@ namespace Bravo_SR03
             //Add a specific number of employees
             Console.WriteLine("How many will be added?");
             int emps = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("----------------");
             //Reapeat Add function according to the number input
-            //Add first and last name to record list
+            //Add employee first and last name to record list
             for (int i = 0; i < emps; i++)
             {
-                Console.WriteLine("Please enetr First name:");
+                Console.WriteLine("Please enter First name:");
                 Fname = Console.ReadLine();
-                Console.WriteLine("Please enetr Last name:");
+                Console.WriteLine("Please enter Last name:");
                 Lname = Console.ReadLine();
-                Console.WriteLine($"! {Fname}, {Lname} has been added to record list");
-                employee.Add($" {Fname}, {Lname}");
+                Console.WriteLine($"{Fname}, {Lname} has been added to record list");
+                Console.WriteLine("----------------");
+                employee.Add($"{Fname}, {Lname}");
             }
         }
     }
