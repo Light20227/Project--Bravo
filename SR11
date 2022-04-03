@@ -207,7 +207,7 @@ namespace Bravo_SR03
         {
             Console.WriteLine("");
             Console.WriteLine("File Option");
-            Console.WriteLine($"\t1 - Write List To File\n\t2 - Read File");
+            Console.WriteLine($"\t1 - Write List To File");
             filePath = @"C:\Users\SEEKTRUTH\Desktop\Bravo File\Record.txt";
 
             switch (Convert.ToInt32(Console.ReadLine()))
@@ -217,16 +217,6 @@ namespace Bravo_SR03
                     {
                         File.WriteAllLines(filePath, employee);
                         Console.WriteLine("List has been printed to file");
-                    }
-                    break;
-                case 2:
-                    List<string> list = new List<string>();
-                    list = File.ReadAllLines(filePath).ToList();
-                    Console.WriteLine("List on file: ");
-                    foreach(String Lists in list)
-                    {
-                        Console.WriteLine("--------------------");
-                        Console.WriteLine(Lists);
                     }
                     break;
             }
