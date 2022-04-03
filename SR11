@@ -208,7 +208,8 @@ namespace Bravo_SR03
             Console.WriteLine("");
             Console.WriteLine("File Option");
             Console.WriteLine($"\t1 - Write List To File");
-            filePath = @"C:\Users\SEEKTRUTH\Desktop\Bravo File\Record.txt";
+            //Specify a File destination in folder for filePath
+            filePath = @"C:\User........";
 
             switch (Convert.ToInt32(Console.ReadLine()))
             {
