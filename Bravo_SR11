@@ -21,8 +21,6 @@ namespace Bravo_SR11
             {
                 // loop option
                 bool enterAgain = true;
-                // loop print option
-                bool print = true;
                 // Design landing page Title
                 Console.WriteLine($"----------------------------------------------" +
                                   $"\n------------ employee information ------------" +
@@ -205,6 +203,7 @@ namespace Bravo_SR11
         }
         static void FileRecord()
         {
+        //Write or Read File
             Console.WriteLine("");
             Console.WriteLine("File Option");
             Console.WriteLine($"\t1 - Write List To File");
@@ -213,6 +212,7 @@ namespace Bravo_SR11
 
             switch (Convert.ToInt32(Console.ReadLine()))
             {
+            //Write List to file
                 case 1:
                     foreach(var String in employee)
                     {
